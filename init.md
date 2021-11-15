@@ -37,3 +37,37 @@ cat /etc/redhat-release
 ```
 yum -y update
 ```
+
+### poman 容器操作
+列出所有的容器 ID
+
+```
+poman ps -aq
+```
+停止所有的容器
+```
+poman stop $(poman ps -aq)
+```
+删除所有的容器
+```
+poman rm $(poman ps -aq)
+```
+删除所有的鏡像
+```
+poman rmi $(poman images -q)
+```
+複製文件
+
+```
+poman cp mycontainer:/opt/file.txt /opt/local/
+poman cp /opt/local/file.txt mycontainer:/opt/
+```
+
+----
+
+### 使用他們的文件
+下載 centos
+```
+podman run -i -t -d --net host --cap-add=all -e "container=podman" --restart always --name=aesopowerSdk --device /dev/fuse --entrypoint /sbin/init centos
+```
+
