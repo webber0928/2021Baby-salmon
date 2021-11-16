@@ -103,7 +103,7 @@ podman run -i -t -d --net host --cap-add all -e "container=podman" --restart alw
 podman exec -i -t aesopowerSdk /bin/bash
 ```
 
-若運行 systecmtl 得到失敗的回應，則可能為 selinux 的傑作，可先將其暫時關閉。
+若運行 systemctl 得到失敗的回應，則可能為 selinux 的傑作，可先將其暫時關閉。
 ```
 setenforce 0
 ```
@@ -379,3 +379,13 @@ svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cmd/trunk --configo
 參考資料
 * https://www.cadch.com/modules/news/article.php?storyid=227 => 多種版本 php 支援。
 * https://www.tecmint.com/fix-failed-to-set-locale-defaulting-to-c-utf-8-in-centos/ => vim 亂碼問題
+
+------
+
+遇到的問題
+
+在 centos8 使用 systemctrl 卻出現 **Failed to connect to bus: No such file or directory**
+
+解決辦法
+
+https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
