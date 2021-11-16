@@ -38,29 +38,29 @@ cat /etc/redhat-release
 yum -y update
 ```
 
-### poman 容器操作
+### podman 容器操作
 列出所有的容器 ID
 
 ```
-poman ps -aq
+podman ps -aq
 ```
 停止所有的容器
 ```
-poman stop $(poman ps -aq)
+podman stop $(podman ps -aq)
 ```
 删除所有的容器
 ```
-poman rm $(poman ps -aq)
+podman rm $(podman ps -aq)
 ```
 删除所有的鏡像
 ```
-poman rmi $(poman images -q)
+podman rmi $(podman images -q)
 ```
 複製文件
 
 ```
-poman cp mycontainer:/opt/file.txt /opt/local/
-poman cp /opt/local/file.txt mycontainer:/opt/
+podman cp mycontainer:/opt/file.txt /opt/local/
+podman cp /opt/local/file.txt mycontainer:/opt/
 ```
 
 ----
