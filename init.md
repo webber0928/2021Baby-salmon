@@ -63,6 +63,10 @@ podman cp mycontainer:/opt/file.txt /opt/local/
 podman cp /opt/local/file.txt mycontainer:/opt/
 ```
 
+删除所有的鏡像
+```
+podman rmi $(podman images -qa) -f
+```
 ----
 
 ### 使用他們的文件
