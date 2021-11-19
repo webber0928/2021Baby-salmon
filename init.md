@@ -365,7 +365,7 @@ cron 部分可以用以下操作進行 check out.
 username=;
 sshPort=;
 key=;
-svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cron/trunk --configoption="config:tunnels:ssh=ssh -p ${sshPort} -i ${key}";
+svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cron/trunk --config-option="config:tunnels:ssh=ssh -p ${sshPort} -i ${key}";
 ```
 
 devcom & other service
@@ -373,7 +373,7 @@ devcom & other service
 username=;
 sshPort=;
 key=;
-svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cmd/trunk --configoption="config:tunnels:ssh=ssh -p ${sshPort} -i ${key}";
+svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cmd/trunk --config-option="config:tunnels:ssh=ssh -p ${sshPort} -i ${key}";
 ```
 
 參考資料
