@@ -389,3 +389,35 @@ svn co svn+ssh://${username}@localhost/var/svn/aesopower-cms-cmd/trunk --configo
 解決辦法
 
 https://github.com/geerlingguy/docker-fedora27-ansible/issues/2
+
+------
+
+虛擬機掛載資料夾
+
+在OS X下，設定一個共享資料夾，與VirtualBox中Ubuntu系統共享檔案。
+
+1：在主機中新建一個資料夾，作為存放共享檔案的資料夾。
+
+2：在VirtualBox管理器中，選擇Ubuntu虛擬機器=>設定=>共享資料夾=>新增共享資料夾。
+這裡寫圖片描述
+
+在新建面板上，共享資料夾路徑中，選擇主機中共享資料夾。此時會自動生成一個共享資料夾名稱VirtualBox_VMs(可更改)。勾選自動掛載，固定分配選項。
+這裡寫圖片描述
+
+3：啟動Ubuntu虛擬機器，開啟終端。
+
+用命令建立名為VMShared(可更改)的資料夾(非root使用者必須使用命令建立)：
+```
+$ sudo mkdir VMShared
+```
+然後執行掛載命令：
+
+```
+sudo mount -t vboxsf VirtualBox_VMs /home/username/VMShared
+```
+
+VMShared：步驟2中生成的共享資料夾名稱
+
+/home/username/VMShared：以命令建立的共享資料夾的路徑
+
+參考網址: https://www.itread01.com/content/1550532444.html
