@@ -421,3 +421,15 @@ VMShared：步驟2中生成的共享資料夾名稱
 /home/username/VMShared：以命令建立的共享資料夾的路徑
 
 參考網址: https://www.itread01.com/content/1550532444.html
+
+---------
+
+將文件從主機複製到 Docker 容器中
+
+您可以使用以下命令將文件從主機複製到 Docker 容器。Docker cp 示例：
+
+```
+# docker cp /host/path/target <containerId>:/file/path/within/container
+
+$ docker cp 1 container_name:/tmp/
+```
